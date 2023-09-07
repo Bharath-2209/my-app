@@ -1,0 +1,15 @@
+<div class="parent">
+    <div class="pic" *ngFor="let a of photo">
+        <div>
+            <img src="{{a.url}}" width="100px" height="100px" alt="">
+        </div>
+        <div>
+            <h5>Id: {{a.id}}</h5>
+            <h5>Name: {{a.name}}</h5>
+            <h5>Width: {{a.width}}</h5>
+            <h5>Height: {{a.height}}</h5>
+            <h5>Count: {{a.box_count}}</h5>
+            <h5>Captions: {{a.captions}}</h5>
+        </div>
+    </div>
+</div>

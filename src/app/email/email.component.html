@@ -1,0 +1,13 @@
+<div class="parent" *ngFor="let a of email">
+    <div class="mail">
+        <div class="image">
+            <img src="assets\bank icon.png" alt="">
+        </div>
+        <div class="details" [ngStyle]="{'color':a.completed==true ? 'grey' :'brown'}">
+            <h5>User: {{a.userId}}</h5>
+            <h5>Id: {{a.id}}</h5>
+            <h5>Title: {{a.title}}</h5>
+            <h5>Completed: {{a.completed}}</h5>
+        </div>
+    </div>
+</div>

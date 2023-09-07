@@ -1,0 +1,27 @@
+form{
+    background-color: rgb(189, 114, 155);
+    width: 550px;
+    border-radius: 30px;
+    margin-left: 250px;
+    padding: 50px;
+}
+label{
+    width: 200px;
+    margin: 10px;
+    font-size: x-large;
+
+}
+input{
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(209, 207, 207);
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    
+}
+button{
+    margin-left: 180px;
+    text-transform: uppercase;
+    font-weight: 700;
+}

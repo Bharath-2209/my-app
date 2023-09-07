@@ -1,0 +1,30 @@
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>SNo</th>
+            <th>API</th>
+            <th>Description</th>
+            <th>Auth</th>
+            <th>HTTPS</th>
+            <th>Cors</th>
+            <th>Link</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of practice; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{a.API}}</td>
+            <td>{{a.Description}}</td>
+            <td>{{a.Auth}}</td>
+            <td>{{a.HTTPS}}</td>
+            <td>{{a.Cors}}</td>
+            <td>{{a.Link}}</td>
+            <td>{{a.Category}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

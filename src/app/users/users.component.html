@@ -1,0 +1,57 @@
+<input type="text" [(ngModel)]="term" (keypress)="getFilteredUsers()">
+
+<label>Column: </label>
+<select [(ngModel)]="column">
+    <option>phone</option>
+    <option>fee</option>
+</select>
+
+<label>Order: </label>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+
+<button (click)="getSortedUsers()">Sort</button>
+
+<label>Limit: </label>
+<select [(ngModel)]="limit">
+    <option>1</option>
+    <option>2</option>
+</select>
+
+<label>Page: </label>
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+
+<button (click)="getPagedUsers()">Pagination</button>
+
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Fee</th>
+            <th>Id</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.fee}}</td>
+            <td>{{user.id}}</td>
+            <td>
+                <button (click)="deleteUsers(user.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

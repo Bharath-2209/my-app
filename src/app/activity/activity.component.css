@@ -1,0 +1,24 @@
+
+.parent{
+    margin: 180px;
+    margin-left: 300px;
+}
+.act{
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    border-radius: 20px;
+    padding: 60px;
+}
+button{
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    font-size: large;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(197, 28, 79);
+    text-transform: uppercase;
+}

@@ -1,0 +1,20 @@
+<p>createaccount works!</p>
+<form [formGroup]="accountForm">
+    <label>Account Name: </label>
+    <input type="text" formControlName="account_name">
+    <br><br>
+
+    <label>Balance: </label>
+    <input type="number" formControlName="available_balance">
+    <br><br>
+
+    <label>Account Number: </label>
+    <input type="number" formControlName="account_number">
+    <br><br>
+
+    <label>City: </label>
+    <input type="text" formControlName="city">
+    <br><br>
+
+    <button class="btn btn-primary" (click)="submit()">Submit</button>
+</form>

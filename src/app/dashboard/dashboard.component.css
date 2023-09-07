@@ -1,0 +1,52 @@
+.parent {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+
+}
+
+.left {
+    width: 20%;
+    height: 100%;
+    background-color: brown;
+    text-align: center;
+    color: white;
+    overflow: auto;
+
+}
+
+h3 {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+h3:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.right {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    overflow: auto;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+
+button {
+    width: 120px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 10px;
+    border: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+}

@@ -1,0 +1,13 @@
+<!-- <p>grade works!</p> -->
+
+<div class="sheet">
+    <h1>Marks</h1>
+    <input type="number" [(ngModel)]="marks">
+    <br><br>
+    <button (click)="marks">Calculate</button>
+    <h2 *ngIf="marks<=100 && marks>=90">Grade A</h2>
+    <h2 *ngIf="marks<90 && marks>=70">Grade B</h2>
+    <h2 *ngIf="marks<70 && marks>=50">Grade C</h2>
+    <h2 *ngIf="marks<50 && marks>=35">Grade D</h2>
+    <h2 *ngIf="marks<35">FAIL</h2>
+</div>
