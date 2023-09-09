@@ -16,5 +16,63 @@
     <input type="text" formControlName="city">
     <br><br>
 
+    <!-- nested method -->
+    <div formGroupName="address">
+        <label>HNO:</label>
+        <input type="number" formControlName="hno">
+        <br>
+        <label>State:</label>
+        <input type="text" formControlName="state">
+        <br>
+        <label>Pin:</label>
+        <input type="number" formControlName="pin">
+        <br>
+    </div>
+
+    <!-- Dynamic form method -->
+    <label>Type: </label>
+    <input type="radio" name="type" formControlName="type" value="earlyfee">
+    <label>EARLY FEE:</label>
+    <input type="radio" name="type" formControlName="type" value="latefee">
+    <label>LATE FEE:</label>
+    <br>
+
+    <div *ngIf="accountForm.get('type')?.value == 'earlyfee'">
+        <label>Early Fee: </label>
+        <input type="number" formControlName="earlyfee">
+        <br>
+    </div>
+
+    <div *ngIf="accountForm.get('type')?.value == 'latefee'">
+        <label>Late Fee: </label>
+        <input type="number" formControlName="latefee">
+        <br>
+    </div>
+
+    <!-- Array form method -->
+    <button (click)="addCard()" class="btn btn-secondary">ADD CARD</button>
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+                <h4>CARD {{i+1}}</h4>
+
+                <label>CARD NO: </label>
+                <input type="number" formControlName="no">
+                <br>
+
+                <label>Expiry: </label>
+                <input type="month" formControlName="exp">
+                <br>
+
+                <label>CVV: </label>
+                <input type="number" formControlName="cvv">
+                <br>
+
+                <button (click)="deleteCard(i)" class="btn btn-warning">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
     <button class="btn btn-primary" (click)="submit()">Submit</button>
 </form>

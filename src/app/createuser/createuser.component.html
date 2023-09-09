@@ -1,11 +1,23 @@
 <p>createuser works!</p>
+<!-- form method -->
 <form [formGroup]="userForm">
     <label>Name: </label>
     <input type="text" formControlName="name">
+    <!-- input form validators -->
+    <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name should have min 3 characters</p>
+    </div>
     <br><br>
 
     <label>Phone: </label>
     <input type="number" formControlName="phone">
+    <!-- input form validators -->
+    <div class="text-danger" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+        <p *ngIf="userForm.get('phone')?.errors?.['required']">Phone number is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min']">Phone Number should be 10 digits</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max']">Phone Number should not be more than 10 digits</p>
+    </div>
     <br><br>
 
     <label>City: </label>
@@ -20,5 +32,83 @@
     <input type="number" formControlName="id">
     <br><br>
 
+    <!-- Nested form method -->
+    <div formGroupName="address">
+
+        <label>Hno: </label>
+        <input type="number" formControlName="hno">
+        <br><br>
+
+        <label>State: </label>
+        <input type="text" formControlName="state">
+        <!-- nested form validators -->
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">State is required</p>
+        </div>
+        <br><br>
+
+        <label>Pin: </label>
+        <input type="number" formControlName="pin">
+        <!-- nested form validators -->
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">Pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">Pin should be min 6 digits</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">Pin  should not be more than 6 digits</p>
+        </div>
+        <br><br>
+
+    </div>
+
+    <!-- Dynamic form method -->
+    <label>Type: </label>
+    <input type="radio" name="type" formControlName="type" value="dayScholor">
+    <label>Day-Scholor</label>
+    <input type="radio" name="type" formControlName="type" value="residential">
+    <label>Residential</label>
+    <br>
+
+    <div *ngIf="userForm.get('type')?.value == 'dayScholor'">
+        <label>Bus Fee: </label>
+        <input type="number" formControlName="busfee">
+        <br>
+    </div>
+
+    <div *ngIf="userForm.get('type')?.value == 'residential'">
+        <label>Hostel Fee: </label>
+        <input type="number" formControlName="hostelfee">
+        <br>
+    </div>
+
+    <!-- Form Array method -->
+    <button (click)="addCard()" class="btn btn-secondary">ADD CARD</button>
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls ; let i = index">
+            <div formGroupName="{{i}}">
+                <h4>CARD {{i+1}}</h4>
+
+                <label>CARD NO: </label>
+                <input type="number" formControlName="no">
+                <br>
+
+                <label>Expiry: </label>
+                <input type="month" formControlName="exp">
+                <br>
+
+                <label>CVV: </label>
+                <input type="number" formControlName="cvv">
+                <!-- array form validators -->
+                <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">CVV is required</p>
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">CVV should be 3 digits</p>
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">CVV should not be more than 3 digits</p>
+                </div>
+                <br>
+
+                <button (click)="deleteCard(i)" class="btn btn-warning">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
     <button class="btn btn-danger" (click)="submit()">Submit</button>
 </form>

@@ -2,10 +2,6 @@
 
 <form action="" [formGroup]="vehicleForm">
 
-    <!-- <label>Id: </label> 
-    <input type="number" >
-    <br><br> -->
-
     <label>Vehicle: </label>
     <input type="text" formControlName="Vehicle">
     <br><br>
@@ -29,6 +25,67 @@
     <label>Color: </label>
     <input type="text" formControlName="color">
     <br><br>
+
+    <!-- nested form method -->
+    <div formGroupName="address">
+        <label>Hno: </label>
+        <input type="number" formControlName="hno">
+        <br><br>
+
+        <label>State: </label>
+        <input type="text" formControlName="state">
+        <br><br>
+
+        <label>Pin: </label>
+        <input type="number" formControlName="pin">
+        <br><br>
+    </div>
+
+    <!-- Dynamic form method -->
+    <label>Tax: </label>
+    <input type="radio" name="tax" formControlName="tax" value="cgst">
+    <label>CGST</label>
+    <input type="radio" name="tax" formControlName="tax" value="sgst">
+    <label>SGST</label>
+    <br>
+
+    <div *ngIf="vehicleForm.get('tax')?.value == 'cgst'">
+        <label>Less: </label>
+        <input type="number" formControlName="cgst">
+        <br>
+    </div>
+
+    <div *ngIf="vehicleForm.get('tax')?.value == 'sgst'">
+        <label>More: </label>
+        <input type="number" formControlName="sgst">
+        <br>
+    </div>
+
+    <!-- Form Array method -->
+    <button (click)="addCard()" class="btn btn-secondary">ADD CARD</button>
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls ; let i = index">
+            <div formGroupName="{{i}}">
+                <h4>CARD {{i+1}}</h4>
+
+                <label>CARD NO: </label>
+                <input type="number" formControlName="no">
+                <br>
+
+                <label>Expiry: </label>
+                <input type="month" formControlName="exp">
+                <br>
+
+                <label>CVV: </label>
+                <input type="number" formControlName="cvv">
+                <br>
+
+                <button (click)="deleteCard(i)" class="btn btn-warning">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
 
     <button class="btn btn-success" (click)="submit()">Submit</button>
 

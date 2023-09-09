@@ -8,16 +8,16 @@ import { BooksService } from '../books.service';
 })
 export class BooksComponent {
 
-  public books: any = [];
+  public book: any = [];
   
   public a: any = "";
 
   constructor(private _booksService: BooksService) {
     _booksService.getBooks().subscribe(
       (data: any) => {
-        this.books = [data];
+        this.book = data.data;
         // this.books = [data.data.books];
-        console.log(this.books)
+        
       },
       (err: any) => {
         alert("Internal server error")
@@ -42,7 +42,7 @@ export class BooksComponent {
   // }
 
   titleOrder() {
-    this.books.b.books.sortBy((x: any, y: any) => {
+    this.book.books.sortBy((x: any, y: any) => {
       if (x.title < y.title)
         return -1;  
       if (x.title > y.title)
