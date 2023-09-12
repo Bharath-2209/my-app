@@ -35,12 +35,16 @@ export class VehiclesService {
 
   // POST DATA IN API
   createVehicle(data:any):Observable<any>{
-    return this._httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction",data)
+    return this._httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction",data);
   }
 
   //  page communication for view button
   getDetails(id:any):Observable<any>{
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/"+id);
+  }
 
+  // edit button for edit for updating data to API
+  updateVehicle(id:any, data:any):Observable<any>{
+    return this._httpClient.put("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/"+id,data);
   }
 }

@@ -56,6 +56,8 @@ const routes: Routes = [
     {path:'activity', component:ActivityComponent},
     {path:'books', component:BooksComponent},
     {path:'createvehicle', component:CreatevehicleComponent, canDeactivate:[notifyGuard]},
+    // .....edit button.......
+    {path: 'edit-vehicles/:id', component:CreatevehicleComponent},
     {path:'createuser', component:CreateuserComponent, canDeactivate:[notifyGuard]},
     {path:'createaccount', component:CreateaccountComponent, canDeactivate:[notifyGuard]},
     // page communication for view button

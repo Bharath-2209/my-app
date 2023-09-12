@@ -98,4 +98,8 @@ export class VehiclesComponent {
   }
   
   
+  //  edit button to edit form
+  edit(id:any){
+    this.router.navigateByUrl('/dashboard/edit-vehicles/'+id);
+  }
 }
