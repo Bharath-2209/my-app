@@ -29,6 +29,7 @@ import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent} from './createaccount/createaccount.component';
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
+import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -56,7 +57,10 @@ const routes: Routes = [
     {path:'books', component:BooksComponent},
     {path:'createvehicle', component:CreatevehicleComponent, canDeactivate:[notifyGuard]},
     {path:'createuser', component:CreateuserComponent, canDeactivate:[notifyGuard]},
-    {path:'createaccount', component:CreateaccountComponent, canDeactivate:[notifyGuard]}
+    {path:'createaccount', component:CreateaccountComponent, canDeactivate:[notifyGuard]},
+    // page communication for view button
+    {path: 'vehicledetails/:id', component:VehicledetailsComponent},
+
   ]},
   {path: '', component:LoginComponent},
   {path: '**', component:PageNotFoundComponent},

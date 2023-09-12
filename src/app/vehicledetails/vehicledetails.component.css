@@ -1,0 +1,7 @@
+.parent{
+    background-image: linear-gradient(to right, red , yellow);
+    padding-left: 300px;
+}
+mark{
+    border-radius: 20px;
+}
