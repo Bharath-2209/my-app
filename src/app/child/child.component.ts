@@ -9,6 +9,10 @@ export class ChildComponent {
 
   @Input() public ac:number = 0;
   public bc: number = 0;
+  // rating task
+  @Input() public rating: number = 0;
+  public rc:number=0;
+
   @Output() public bEvent:EventEmitter<any> = new EventEmitter();
 
 send(){

@@ -2,4 +2,10 @@
 <input type="number" [(ngModel)]="ap">
 <p>{{bp}}</p>
 
-<app-child [ac]="ap" (bEvent)="catch($event)"></app-child>
+
+<!-- rating task -->
+<label>Rating: </label>
+<input type="number" [(ngModel)]="rp">
+
+<app-child [ac]="ap" (bEvent)="catch($event)" ></app-child>
+<app-child [rating]="rp" ></app-child>

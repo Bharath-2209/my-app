@@ -9,6 +9,9 @@ export class ParentComponent {
   public ap:number = 0;
   public bp:number = 0;
 
+  // rating task
+  public rp:number=0;
+
   catch(value:any){
     this.bp = value;
   }

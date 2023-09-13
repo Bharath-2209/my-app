@@ -2,3 +2,10 @@
 {{ac}}
 <h1>Getting value from parent</h1>
 <input type="number" [(ngModel)]="bc" (keyup)="send()">
+
+<!-- rating task -->
+<img *ngIf="rating==1" src="assets\1 star.png" alt="">
+<img *ngIf="rating==2" src="assets\dice 2.jpeg" alt="">
+<img *ngIf="rating==3" src="assets\dice 3.png" alt="">
+<img *ngIf="rating==4" src="assets\dice 4.png" alt="">
+<img *ngIf="rating==5" src="assets\dice 5.png" alt="">
