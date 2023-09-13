@@ -36,6 +36,8 @@ import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
 import { TodoComponent } from './todo/todo.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { TodoComponent } from './todo/todo.component';
     CreateaccountComponent,
     VehicledetailsComponent,
     TodoComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

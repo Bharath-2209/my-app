@@ -31,6 +31,8 @@ import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
 import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
 import { TodoComponent } from './todo/todo.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -64,6 +66,9 @@ const routes: Routes = [
     {path:'createaccount', component:CreateaccountComponent, canDeactivate:[notifyGuard]},
     // page communication for view button
     {path: 'vehicledetails/:id', component:VehicledetailsComponent},
+    // component communication
+    { path: 'parent', component:ParentComponent},
+    { path: 'child', component:ChildComponent}
 
   ]},
   {path: '', component:LoginComponent},
