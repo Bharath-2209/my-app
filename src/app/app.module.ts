@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { VehicledetailsComponent } from './vehicledetails/vehicledetails.compone
     CreateuserComponent,
     CreateaccountComponent,
     VehicledetailsComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,

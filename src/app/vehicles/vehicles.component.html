@@ -1,5 +1,7 @@
+<!-- filter method -->
 <input type="text" [(ngModel)]="term" (keypress)="getFilteredVehicles()">
 
+<!-- sort method -->
 <label>Column: </label>
 <select [(ngModel)]="column">
     <option>color</option>
@@ -14,6 +16,7 @@
 
 <button (click)="getSortedVehicles()">Sort</button>
 
+<!-- pagination method -->
 <label>Limit: </label>
 <select [(ngModel)]="limit">
     <option>3</option>

@@ -1,0 +1,10 @@
+<h1>ToDo works!</h1>
+<header>
+    <div class="parent">
+        <input type="text" [(ngModel)]="term">
+        <button id="b1" (click)="add()">ADD</button>
+    </div>
+    <div class="child" *ngFor="let a of name ; let i = index">
+        <p>{{a}} <button class="btn btn-danger" (click)="delete(i)">delete</button></p>
+    </div>
+</header>

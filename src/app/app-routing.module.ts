@@ -30,9 +30,11 @@ import { CreateaccountComponent} from './createaccount/createaccount.component';
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
 import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
+  {path: 'todo', component:TodoComponent},
   {path: 'dashboard', component:DashboardComponent, canActivate:[authenticationGuard], children:[
     {path: 'home', component:HomeComponent},
     {path: 'about', component:AboutComponent},
