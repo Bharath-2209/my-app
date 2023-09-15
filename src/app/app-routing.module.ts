@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -33,6 +33,8 @@ import { VehicledetailsComponent } from './vehicledetails/vehicledetails.compone
 import { TodoComponent } from './todo/todo.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { AboutCompanyComponent } from './about/about-company/about-company.component';
+import { AboutCeoComponent } from './about/about-ceo/about-ceo.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -68,7 +70,15 @@ const routes: Routes = [
     {path: 'vehicledetails/:id', component:VehicledetailsComponent},
     // component communication
     { path: 'parent', component:ParentComponent},
-    { path: 'child', component:ChildComponent}
+    { path: 'child', component:ChildComponent},
+    // module communication
+    { path: 'about-company',component:AboutCompanyComponent},
+    { path: 'about-ceo',component:AboutCeoComponent},
+    // lazy loading
+    {
+      path: 'contact',
+      loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+    },
 
   ]},
   {path: '', component:LoginComponent},
@@ -76,7 +86,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // pre loading write after routes, works
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

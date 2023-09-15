@@ -38,6 +38,7 @@ import { VehicledetailsComponent } from './vehicledetails/vehicledetails.compone
 import { TodoComponent } from './todo/todo.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ChildComponent } from './child/child.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutModule
 
   ],
   providers: [],

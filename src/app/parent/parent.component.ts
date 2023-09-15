@@ -12,7 +12,16 @@ export class ParentComponent {
   // rating task
   public rp:number=0;
 
-  catch(value:any){
-    this.bp = value;
-  }
+  // calculator task
+  public n1:number = 0;
+  public n2:number = 0;
+  public result:number =0;
+
+ catch(value:any){
+  this.result = value;
+ }
+
+  // catch(value:any){
+  //   this.bp = value;
+  // }
 }

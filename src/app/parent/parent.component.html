@@ -1,11 +1,23 @@
-<p>parent works!</p>
+<!-- <p>parent works!</p>
 <input type="number" [(ngModel)]="ap">
-<p>{{bp}}</p>
+<p>{{bp}}</p> -->
 
 
-<!-- rating task -->
+<!-- rating task
 <label>Rating: </label>
 <input type="number" [(ngModel)]="rp">
+<br><br> -->
 
-<app-child [ac]="ap" (bEvent)="catch($event)" ></app-child>
-<app-child [rating]="rp" ></app-child>
+<!-- calculator task -->
+<h3>Number-1:</h3>
+<input type="number" [(ngModel)]="n1">
+<br>
+<h3>Number-2: </h3>
+<input type="number" [(ngModel)]="n2">
+<br><br>
+<h1>Result: {{result}}</h1>
+
+
+<!-- <app-child [ac]="ap" (bEvent)="catch($event)" ></app-child> -->
+<!-- <app-child [rating]="rp" ></app-child> -->
+<app-child [num1]="n1" [num2]="n2" (cal)="catch($event)"></app-child>
